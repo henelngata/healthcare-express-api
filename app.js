@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const connectDB = require("./config/db");
 const authRoutes = require("./routes/authRoutes");
+const patientRoutes = require("./routes/patientRoutes");
 
 const app = express();
 
@@ -17,7 +18,8 @@ app.get("/", (req, res) => {
   res.send("Hospital Management System API");
 });
 
-//auth routes
+
 app.use("/api/auth", authRoutes);
+app.use("/api/patients", patientRoutes);
 
 module.exports = app;
