@@ -4,6 +4,7 @@ const connectDB = require("./config/db");
 const authRoutes = require("./routes/authRoutes");
 const patientRoutes = require("./routes/patientRoutes");
 const vitalRoutes = require("./routes/vitalRoutes");
+const medicalRecordRoutes = require("./routes/medicalRecordRoutes");
 
 const app = express();
 
@@ -22,6 +23,7 @@ app.get("/", (req, res) => {
 
 app.use("/api/auth", authRoutes);
 app.use("/api/patients", patientRoutes);
-app.use("/api/patients", vitalRoutes); 
+app.use("/api/patients", vitalRoutes);
+app.use("/api/patients", medicalRecordRoutes); // Medical records routes are nested under patients
 
 module.exports = app;
