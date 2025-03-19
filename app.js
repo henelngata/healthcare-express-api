@@ -6,6 +6,7 @@ const patientRoutes = require("./routes/patientRoutes");
 const vitalRoutes = require("./routes/vitalRoutes");
 const medicalRecordRoutes = require("./routes/medicalRecordRoutes");
 const treatmentPlanRoutes = require("./routes/treatmentPlanRoutes");
+const adminRoutes = require("./routes/adminRoutes");
 
 const app = express();
 
@@ -27,6 +28,6 @@ app.use("/api/patients", patientRoutes);
 app.use("/api/patients", vitalRoutes);
 app.use("/api/patients", medicalRecordRoutes); // Medical records routes are nested under patients
 app.use("/api/patients", treatmentPlanRoutes);
-
+app.use("/api/admin", adminRoutes); // Admin routes
 
 module.exports = app;
